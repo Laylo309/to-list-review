@@ -1,5 +1,5 @@
 /*eslint-disable*/
-export  class CRUD {
+export class CRUD {
   static createTask() {
     const inputData = document.getElementById('inputText').value;
     const saveData = document.getElementById('formText');
@@ -17,7 +17,7 @@ export  class CRUD {
       let checked = '';
       let style = '';
       let styleDescription = '';
-      const styleText='style="display:none"';
+      const styleText = 'style="display:none"';
       if (task.completed) {
         styleDescription = 'style="text-decoration: line-through"';
         checked = 'checked';
@@ -43,7 +43,7 @@ export  class CRUD {
     if (this.getAllTasks().length !== 0) {
       localStorage.setItem(
         'data',
-        JSON.stringify(this.getAllTasks().concat(todo)),
+        JSON.stringify(this.getAllTasks().concat(todo))
       );
     } else {
       localStorage.setItem('data', JSON.stringify(todo));
@@ -57,9 +57,8 @@ export  class CRUD {
     return [];
   }
 
-  static updateTask =(newDatas)=> {
+  static updateTask = (newDatas) => {
     localStorage.clear();
     localStorage.setItem('data', JSON.stringify(newDatas));
-  }
- 
+  };
 }
